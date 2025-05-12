@@ -2,75 +2,139 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial - Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #004aad, #008cff);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #004aad, #007bff);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding: 20px;
         }
 
         .box {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px;
             border-radius: 12px;
             text-align: center;
-            color: white;
-            width: 300px;
+            color: #333;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
         .box h2 {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            color: #004aad;
+        }
+
+        .box p {
+            margin: 10px 0 5px;
+            font-size: 1rem;
+            color: #444;
+            font-weight: 500;
         }
 
         .box input {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
             border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .box input:focus {
+            outline: none;
+            border-color: #004aad;
+            box-shadow: 0 0 5px rgba(0, 74, 173, 0.3);
         }
 
         .box button {
-            padding: 10px 20px;
-            background: #00cc66;
+            padding: 12px;
+            width: 100%;
+            background: #004aad;
             color: white;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .box button:hover {
+            background: #003780;
         }
 
         .box a {
             display: block;
-            color: #00ccff;
+            color: #007bff;
             margin-top: 15px;
             text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
         }
 
         .box a:hover {
+            color: #0056b3;
             text-decoration: underline;
         }
 
         i {
             margin-right: 8px;
+            color: #004aad;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 480px) {
+            .box {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            .box h2 {
+                font-size: 1.5rem;
+            }
+
+            .box input,
+            .box button {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .box p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="box">
-        <h2><i class="fas fa-sign-in-alt"></i>Login do Usuário</h2>
+        <h2><i class="fas fa-sign-in-alt"></i> Login do Usuário</h2>
         <p><i class="fas fa-user"></i>Usuário</p>
-        <input type="text" placeholder="Digite seu usuário">
+        <input type="text" placeholder="Digite seu usuário" required>
         <p><i class="fas fa-lock"></i>Senha</p>
-        <input type="password" placeholder="Digite sua senha">
+        <input type="password" placeholder="Digite sua senha" required>
         <button>Entrar</button>
-      
+        <a href="index.html"><i class="fas fa-home"></i> Voltar para a Página Inicial</a>
     </div>
 </body>
 </html>
